@@ -1,5 +1,5 @@
-import express from "express"
 import cors from "cors"
+import express from "express"
 import { PrismaClient } from "@prisma/client"
 
 const app = express()
@@ -76,6 +76,6 @@ app.delete("/api/notes/:id",async (req, res) => {
 })
 
 
-app.listen(5000, () => {
-  console.log('server running on localhost:5000')
+app.listen(process.env.PORT, () => {
+  console.log(`server running on port ${process.env.PORT}`)
 })
